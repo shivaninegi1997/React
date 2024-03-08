@@ -65,7 +65,8 @@ const FeaturedProducts = ({type}) => {
         data.map((o,i)=>(
 
 
-        <Card data={o} data1={i}/>
+        <Card da
+        ta={o} data1={i}/>
            
         )
         

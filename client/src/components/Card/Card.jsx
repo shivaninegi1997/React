@@ -8,7 +8,7 @@ const [isHovered, setIsHovered] = useState(false)
 
 <div style={{width:'25%' , position:"relative"}} key={data1} >
 <Link to={`/product/${data.id}`}>
-{data.isNew ? <span style={{position:"absolute",fontSize:"10px",background:"yellow"}}>New Season</span> : null}
+{data.isNew && <span style={{position:"absolute",fontSize:"10px",background:"yellow"}}>New Season</span>}
 <img style={{height: "169px",width:'100%'}} 
   src={isHovered == data.id ? data.img1 : data.img} alt="" 
   onMouseOver={() => setIsHovered(data.id)}

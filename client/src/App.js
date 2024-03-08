@@ -10,9 +10,9 @@ import "./app.scss"
 const Layout = () => {
   return (
     <div className="app">
-      <Navbar />
+      {/* <Navbar /> */}
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
