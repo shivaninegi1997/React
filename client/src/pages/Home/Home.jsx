@@ -107,14 +107,14 @@ const Home = () => {
         return (i && <p>gg:{i.toString()}</p>)
       })
       } */}
-      //Accordion
+      {/* Accordion */}
       {/* {
          Data.map((o,i) => (
          <Accordion param1={o} param2={receiveDataFromChild}/>
           
       ))} */}
 
-      //i icon hover
+      {/* i icon hover */}
         {/* <div style={{position:"relative"}}>
         <InfoIcon onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
         {
