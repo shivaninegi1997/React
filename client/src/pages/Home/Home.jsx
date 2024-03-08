@@ -5,6 +5,7 @@ import "./Home.scss"
 import Products from '../Products/Products'
 import Accordion from '../../components/Accordion/Accordion'
 import InfoIcon from '@mui/icons-material/Info';
+import SearchIcon from '@mui/icons-material/Search';
 const Home = () => {
 
   
@@ -46,36 +47,46 @@ const Home = () => {
   const[Data,setData] = useState(Adata)
   const[Hdata,setHdata] = useState(false)
 
-  const handleCheckboxChange = (name) =>{
-    setisChecked({
-      ...isChecked,
-      [name]:!isChecked[name]
-    })
-    // console.log({name})
+  // const handleCheckboxChange = (name) =>{
+  //   setisChecked({
+  //     ...isChecked,
+  //     [name]:!isChecked[name]
+  //   })
+  //   // console.log({name})
     
-  }
+  // }
   
-  const receiveDataFromChild = (id,newContent) => {
-    console.log(id,newContent)
-    const newData = Adata.map((j) => {
-      if(j.id===id){
-        return {...j,content:newContent}
-      }
-      return j
-    })
-    setData(newData)
-  }
-  const handleMouseEnter = () => {
-    setHdata(true)
+  // const receiveDataFromChild = (id,newContent) => {
+  //   console.log(id,newContent)
+  //   const newData = Adata.map((j) => {
+  //     if(j.id===id){
+  //       return {...j,content:newContent}
+  //     }
+  //     return j
+  //   })
+  //   setData(newData)
+  // }
+  // const handleMouseEnter = () => {
+  //   setHdata(true)
     
 
-  }
-  const handleMouseLeave = () => {
-    setHdata(false)
+  // }
+  // const handleMouseLeave = () => {
+  //   setHdata(false)
     
 
-  }
+  // }
   console.log(Data)
+  const array1=[]
+  const searchFilter = (e) => {
+    console.log(e.target.value)
+    Adata.map((o,k) => {
+       if(o.title.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()))
+         console.log(o.title)
+        array1.push(o.title)
+    })
+ console.log(array1)
+  }
   return (
     <div className='home'>
       {/* <Slider/>
@@ -125,6 +136,16 @@ const Home = () => {
         }
    
         </div> */}
+         
+
+      {/* search filter */}
+      <div>
+        <input onChange={searchFilter}/>
+        <span><SearchIcon/></span>
+        <div>
+          {array1}
+        </div>
+      </div>
 
       </div>
     
